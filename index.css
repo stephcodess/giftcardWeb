@@ -129,6 +129,24 @@ section{
     padding: 30px 0;
     border-bottom: 2px solid rgba(0, 0, 0, 0.3);
 }
+.header-sidebar .inner .sidebar-menu .css-1f20h8m p{
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+}
+.header-sidebar .inner .sidebar-menu .css-1f20h8m p:hover{
+    letter-spacing: 8px;
+    font-weight: bolder;
+    transition: 0.3s ease-in-out;
+}
+.header-sidebar .inner .sidebar-menu .css-1f20h8m img{
+    height: 15px;
+    width: 15px;
+    margin-right: 10px;
+}
 .hero-section{
     height: calc(100vh - 100px);
     width: auto;

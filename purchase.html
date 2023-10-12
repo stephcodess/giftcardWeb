@@ -10,10 +10,21 @@
 
 <body>
     <!-- header starts -->
-    <header>
-        <div>
-            <!-- <img src="" alt="all" /> -->
+    <header class="general-header">
+        <div class="header-inner">
+            <!-- <img src="images/ebay.png" alt="all" /> -->
             <h2>Gifty</h2>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contactUs.html">contact us</a></li>
+                    <li><a>report</a></li>
+                    <li><a>Buy card</a></li>
+                    <li><button class="hamburger"
+                            style="height: 45px; border: none; background-color: rgba(0,0,0,0.07); width: 45px; border-radius: 50%;"><img
+                                style="width: 20px; height: 20px;" src="images/hamburger.png" alt="" /></button></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
@@ -50,32 +61,53 @@
         </div>
     </section>
     <footer>
-        <div>
-            <div>
-                <div>
+        <div class="column-1">
+            <div class="footer-child child-1">
+                <div class="footer-Logo">
                     <img src="images/giftyLogo.png" alt="yvuydv" />
                     <h3>Gifty</h3>
                 </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem atque nam aliquid omnis accusamus
-                    ullam id magni consectetur, libero fuga, neque dicta! Ipsum dolores numquam ipsa a quasi autem
-                    dicta.</p>
+                <p>Purchase digital cards with instant email delivery. we email all kinds of cards internationally. We
+                    accept paypal and credit cards mode of payment. We are available 24/7.</p>
                 <div>
-                    <input type="text" />
+                    <input type="text" placeholder="Enter your email to subscribe to our newsletter" />
                 </div>
-                <button>click me</button>
+                <button>subscribe</button>
             </div>
-            <div>
-
+            <div class="footer-child child-2">
+                <div>
+                    <h4>Explore</h4>
+                    <nav>
+                        <ul>
+                            <li>About</li>
+                            <li>Contact</li>
+                            <li>FAQs</li>
+                            <li>Privacy Policy</li>
+                        </ul>
+                    </nav>
+                </div>
+                <div>
+                    <h4>Actions</h4>
+                    <nav>
+                        <ul>
+                            <li>Buy Card</li>
+                            <li>Validate</li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
-            <div>
-
+            <div class="footer-child child-3">
+                <div class="social-contacts">
+                    <button><img src="images/twitter.png" alt="twitter" /></button>
+                    <button><img src="images/whatsapp.png" alt="whatsapp" /></button>
+                    <button><img src="images/facebook(1).png" alt="facebook" /></button>
+                </div>
             </div>
         </div>
-        <div>
-            <div class="horizontal divider">
-
+        <div class="column-2">
+            <div class="horizontal-divider">
             </div>
-            <div>
+            <div class="footer-text">
                 <h3>@2023 Gifty</h3>
                 <div>
                     <a href="">Terms & Condition</a>
@@ -84,6 +116,33 @@
             </div>
         </div>
     </footer>
+    <script src="main.js"></script>
+    <script>
+        let hamburgerBtn = document.querySelector(".hamburger");
+        let sideBarCloseBtn = document.querySelector(".close-sidebar-btn");
+        let sidebar = document.querySelector(".header-sidebar");
+        var sidebarOpen = false;
+
+        sideBarCloseBtn.addEventListener("click", () => {
+            if (sidebarOpen) {
+                sidebar.style.display = "none";
+                sidebarOpen = false
+            }
+        })
+
+        hamburgerBtn.addEventListener("click", () => {
+            if (!sidebarOpen) {
+                sidebar.style.display = "flex";
+                sidebarOpen = true;
+            }
+        })
+
+
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>

@@ -16,11 +16,11 @@
     <header class="general-header">
         <div class="header-inner">
             <!-- <img src="images/ebay.png" alt="all" /> -->
-            <h2>Gifty</h2>
+            <h2><a href="index.html">Gifty</a></h2>
             <nav class="header-nav">
                 <ul>
-                    <li><a>About</a></li>
-                    <li href="contactUs.html"><a>contact us</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li ><a href="contactUs.html">contact us</a></li>
                     <li><a>report</a></li>
                     <li><a>Buy card</a></li>
                     <li><button ><img src="" alt="" /></button></li>
@@ -28,6 +28,35 @@
             </nav>
         </div>
     </header>
+    <div class="header-sidebar">
+        <div class="inner" 
+        data-aos="fade-left"
+        >
+            <div class="toggle-close">
+                <div class="close-sidebar-btn"><img width="50px" height="50px" src="images/close.png" alt="" /></div>
+            </div><br>
+
+            <div class="sidebar-menu">
+                <p class=""><span class="">Quick</span> Links</p>
+                <br><br>
+                <div class="css-1f20h8m">
+                    <p><img src="images/home-icon-silhouette.png" alt="" />Home</p>
+                </div>
+                <div class="css-1f20h8m">
+                    <p><img src="images/exclamation-mark.png" alt="" />About</p>
+                </div>
+                <div class="css-1f20h8m">
+                    <p><img src="images/mail.png" alt="" />Contact</p>
+                </div>
+                <div class="css-1f20h8m">
+                    <p><img src="images/dollar-symbol.png" alt="" />Buy</p>
+                </div>
+                <div class="css-1f20h8m">
+                    <p><img src="images/check.png" alt="" />Validate</p>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <!-- header ends -->
     <section class="contact-page">
@@ -58,7 +87,85 @@
             </div>
         </div>
     </section>
+    <footer>
+        <div class="column-1">
+            <div class="footer-child child-1">
+                <div class="footer-Logo">
+                    <img src="images/giftyLogo.png" alt="yvuydv" />
+                    <h3>Gifty</h3>
+                </div>
+                <p>Purchase digital cards with instant email delivery. we email all kinds of cards internationally. We
+                    accept paypal and credit cards mode of payment. We are available 24/7.</p>
+                <div>
+                    <input type="text" placeholder="Enter your email to subscribe to our newsletter" />
+                </div>
+                <button>subscribe</button>
+            </div>
+            <div class="footer-child child-2">
+                <div>
+                    <h4>Explore</h4>
+                    <nav>
+                        <ul>
+                            <li>About</li>
+                            <li>Contact</li>
+                            <li>FAQs</li>
+                            <li>Privacy Policy</li>
+                        </ul>
+                    </nav>
+                </div>
+                <div>
+                    <h4>Actions</h4>
+                    <nav>
+                        <ul>
+                            <li>Buy Card</li>
+                            <li>Validate</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="footer-child child-3">
+                <div class="social-contacts">
+                    <button><img src="images/twitter.png" alt="twitter" /></button>
+                    <button><img src="images/whatsapp.png" alt="whatsapp" /></button>
+                    <button><img src="images/facebook(1).png" alt="facebook" /></button>
+                </div>
+            </div>
+        </div>
+        <div class="column-2">
+            <div class="horizontal-divider">
+            </div>
+            <div class="footer-text">
+                <h3>@2023 Gifty</h3>
+                <div>
+                    <a href="">Terms & Condition</a>
+                    <a href=""> All right reserved</a>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="main.js"></script>
+    <script>
+        let hamburgerBtn = document.querySelector(".hamburger");
+        let sideBarCloseBtn = document.querySelector(".close-sidebar-btn");
+        let sidebar = document.querySelector(".header-sidebar");
+        var sidebarOpen = false;
+
+        sideBarCloseBtn.addEventListener("click", () => {
+            if (sidebarOpen) {
+                sidebar.style.display = "none";
+                sidebarOpen = false
+            }
+        })
+
+        hamburgerBtn.addEventListener("click", () => {
+            if (!sidebarOpen) {
+                sidebar.style.display = "flex";
+                sidebarOpen = true;
+            }
+        })
+
+
+    </script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init();
