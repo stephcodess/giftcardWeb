@@ -124,9 +124,10 @@
                 return response.json();
             })
             .then(function (data) {
-                price.innerHTML = data.bpi[symbol].symbol + data.bpi[symbol].rate;
-                rate = data.bpi[symbol].rate;
-                btcValue.innerHTML = parseInt(inputAmount.value) / parseFloat(rate.replaceAll(',', '')) ? parseInt(inputAmount.value) / parseFloat(rate.replaceAll(',', '')) : 0;
+                console.log(data);
+                price.innerHTML = data.bpi[symbol].symbol + `${data.bpi[symbol].rate_float}`;
+                rate = data.bpi[symbol].rate_float;
+                btcValue.innerHTML = parseInt(inputAmount.value) / rate ? parseInt(inputAmount.value) / rate : 0;
             });
     }
 
@@ -134,44 +135,47 @@
 
     var inputAmount = document.querySelector('.desiredAmount');
     var btcValue = document.querySelector('.totalBtc');
-
+    btcValue.value = parseInt(inputAmount.value) / parseFloat(rate) ? parseInt(inputAmount.value) / parseFloat(rate) : 0;
     // while processing
     inputAmount.addEventListener('input', function () {
-        btcValue.innerHTML = parseInt(inputAmount.value) / parseFloat(rate.replaceAll(',', '')) ? parseInt(inputAmount.value) / parseFloat(rate.replaceAll(',', '')) : 0;
+        btcValue.value = parseInt(inputAmount.value) / parseFloat(rate) ? parseInt(inputAmount.value) / parseFloat(rate) : 0;
     });
 
 </script>
 <script>
-    var button = document.querySelector('.buy-btc-btn');
+    var button = document.querySelector('.submitForm');
+    var formElement = document.getElementById("orderForm");
     // var container= document.querySelector('')
-    button.addEventListener('click', place_order);
-
+    // button.addEventListener('click', place_order);
+    
 
     function place_order(e) {
         e.preventDefault();
+        console.log("pressed");
+        // var amount = 200;
+        // var id = 4;
 
-        var amount = 200;
-        var id = 4;
+        // // var productPrice = productType.options[productType.selectedIndex].value;
 
-        // var productPrice = productType.options[productType.selectedIndex].value;
+        // var emailAddress = document.querySelector(".email_address").value;
+        // var handler = PaystackPop.setup({
+        //     key: 'pk_live_3f69d3dec1d889c80bec047a1ecbefae19f8b36e',
+        //     email: emailAddress,
+        //     amount: parseFloat(document.querySelector(".desiredAmount").value) * 100,
+        //     product: id,
+        //     currency: "NGN",
+        //     callback: function (response) {
+        //         // window.location.href="success.php?order=<?php echo $user['user_id']; ?>";
+        //         alert('success. transaction ref is ' + response.reference);
+        //     },
+        //     onClose: function () {
+        //         alert('window closed');
+        //     }
+        // });
 
-        var emailAddress = document.querySelector(".email_address").value;
-        var handler = PaystackPop.setup({
-            key: 'pk_live_3f69d3dec1d889c80bec047a1ecbefae19f8b36e',
-            email: emailAddress,
-            amount: parseFloat(document.querySelector(".desiredAmount").value) * 100,
-            product: id,
-            currency: "NGN",
-            callback: function (response) {
-                // window.location.href="success.php?order=<?php echo $user['user_id']; ?>";
-                alert('success. transaction ref is ' + response.reference);
-            },
-            onClose: function () {
-                alert('window closed');
-            }
-        });
+        // handler.openIframe();
 
-        handler.openIframe();
+
     }
 </script>
 

@@ -1,4 +1,5 @@
-<?php include "functions.php"; ?>
+<?php include "functions.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,25 +28,36 @@
                 </div>
             </div>
             <div class="payment-body">
-                <form>
+                <form id="orderForm" action="proceedPayment.php" method="POST">
 
                     <div class="payment-input-wrapper">
                         <label>Enter Email Address</label><br>
-                        <input placeholder="email address" name="email" class="email_address" type="email" />
+                        <input required placeholder="email address" name="email_address" class="email_address"
+                            type="email" />
                     </div>
                     <p style="padding: 20px 10px;">Current Bitcoin Price:
                         <b><span></span></b>
                     </p>
                     <div class="payment-input-wrapper">
-                        <label>Enter Amount($)</label><br>
-                        <input type="number" value="1" placeholder="Enter BTC amount to purchase." id="price"
-                            name="amount" min="0" max="1000" step="0.01" class="desiredAmount" />
+                        <label>Enter Amount($)</label>
+                        <input required type="number" value="1" placeholder="Enter BTC amount to purchase." id="price"
+                            name="amount" min="0" max="100000" step="0.01" class="desiredAmount" />
 
-                        <p style="padding: 20px 10px;">you will get: <b><span class="totalBtc"></span></b> btc</p>
+                        <p style="padding: 10px 10px;">you will get: <b>
+                            <input name="btc_amount" disabled type="number" class="totalBtc" /></b> btc</p>
                     </div>
                     <div class="payment-input-wrapper">
                         <label>Enter Your BTC Address</label><br>
-                        <input placeholder="BTC wallet address" name="btc" class="btc_address" type="text" />
+                        <input required placeholder="BTC wallet address" name="btc_address" class="btc_address"
+                            type="text" />
+                    </div>
+                    <div class="payment-footer" style="display:flex; flex-direction: column;">
+                        <p>Pay with either Bank Transfer or Bank deposit</p>
+                        <div style="display:flex; flex-direction: row; justify-content: space-between;width:100%;">
+                            <button class="order_confirm proceed-btn submitForm"
+                                style="display: flex; flex-direction: row; gap: 15px; align-items: center; justify-content: center;"><img
+                                    width="18px" height="18px" src="images/paystackIcon.png" alt="" />proceed</button>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -59,17 +71,7 @@
                     <option value="GBP">POUND</option>
                 </select>
             </div>
-            <div class="payment-footer" style="display:flex; flex-direction: column;">
-                <p>Pay with:</p>
-                <div style="display:flex; flex-direction: row; justify-content: space-between;width:100%;">
-                    <button class="order_confirm proceed-btn buy-btc-btn"
-                        style="display: flex; flex-direction: row; gap: 15px; align-items: center; justify-content: center;"><img
-                            width="18px" height="18px" src="images/paystackIcon.png" alt="" />Bank Transfer</button>
-                    <button class="order_confirm proceed-btn buy-btc-btn"
-                        style="display: flex; flex-direction: row; gap: 15px; align-items: center; justify-content: center;"><img
-                            width="18px" height="18px" src="images/paystackIcon.png" alt="" />Bank Transfer</button>
-                </div>
-            </div>
+
         </div>
     </div>
 
